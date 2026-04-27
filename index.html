@@ -1,0 +1,1550 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>太陽光・蓄電池 無料相談会 | ひとりで悩まず、夫婦で納得する</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700;900&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sun: #F5A623;
+    --sun-light: #FFF3D6;
+    --sky: #4A90D9;
+    --sky-light: #EAF4FF;
+    --green: #5BAD6F;
+    --dark: #1A1A2E;
+    --warm: #FBF7F0;
+    --text: #2D2D2D;
+    --muted: #777;
+    --accent: #E8542A;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: var(--warm);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ========== HERO ========== */
+  .hero {
+    background: linear-gradient(160deg, #FFF8EE 0%, #EAF4FF 60%, #E8F5E9 100%);
+    text-align: center;
+    padding: 60px 20px 50px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(245,166,35,0.18) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; left: -60px;
+    width: 220px; height: 220px;
+    background: radial-gradient(circle, rgba(74,144,217,0.13) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .hero-eyebrow {
+    display: inline-block;
+    background: var(--sun);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    padding: 5px 16px;
+    border-radius: 30px;
+    margin-bottom: 20px;
+    animation: fadeDown 0.6s ease both;
+  }
+
+  .hero h1 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(26px, 6vw, 42px);
+    font-weight: 900;
+    line-height: 1.45;
+    color: var(--dark);
+    margin-bottom: 16px;
+    animation: fadeDown 0.7s ease 0.1s both;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--sky);
+    position: relative;
+  }
+  .hero h1 em::after {
+    content: '';
+    position: absolute;
+    bottom: 2px; left: 0; right: 0;
+    height: 3px;
+    background: var(--sun);
+    border-radius: 2px;
+  }
+
+  .hero-sub {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 32px;
+    animation: fadeDown 0.7s ease 0.2s both;
+  }
+
+  .hero-cta-wrap {
+    animation: fadeDown 0.7s ease 0.3s both;
+  }
+
+  /* ========== CTA BUTTON ========== */
+  .btn-main {
+    display: inline-block;
+    background: linear-gradient(135deg, #E8542A 0%, #F5A623 100%);
+    color: #fff;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 18px 44px;
+    border-radius: 60px;
+    text-decoration: none;
+    box-shadow: 0 8px 28px rgba(232,84,42,0.38);
+    transition: transform 0.18s, box-shadow 0.18s;
+    letter-spacing: 0.04em;
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-main::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 60%);
+  }
+  .btn-main:hover { transform: translateY(-3px); box-shadow: 0 14px 36px rgba(232,84,42,0.45); }
+  .btn-main small {
+    display: block;
+    font-size: 11px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 400;
+    opacity: 0.9;
+    margin-top: 4px;
+    letter-spacing: 0.05em;
+  }
+
+  .btn-sub {
+    display: inline-block;
+    margin-top: 14px;
+    font-size: 13px;
+    color: var(--muted);
+    text-decoration: none;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 2px;
+    transition: color 0.2s;
+  }
+  .btn-sub:hover { color: var(--sky); border-color: var(--sky); }
+
+  /* ========== TRUST BAR ========== */
+  .trust-bar {
+    background: var(--dark);
+    color: rgba(255,255,255,0.9);
+    display: flex;
+    justify-content: center;
+    gap: clamp(16px, 4vw, 48px);
+    flex-wrap: wrap;
+    padding: 16px 20px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+  }
+  .trust-bar span { display: flex; align-items: center; gap: 7px; }
+  .trust-bar .icon { font-size: 18px; }
+
+  /* ========== SECTION COMMON ========== */
+  section { padding: 60px 20px; }
+  .section-label {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--sky);
+    margin-bottom: 10px;
+  }
+  .section-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(22px, 5vw, 34px);
+    font-weight: 700;
+    line-height: 1.5;
+    color: var(--dark);
+    margin-bottom: 12px;
+  }
+  .section-desc {
+    font-size: 15px;
+    line-height: 1.9;
+    color: var(--muted);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* ========== STORY MANGA ========== */
+  .manga-section {
+    background: #fff;
+    padding: 0;
+  }
+  .manga-header {
+    text-align: center;
+    padding: 56px 20px 40px;
+    background: linear-gradient(180deg, var(--warm) 0%, #fff 100%);
+  }
+
+  .story-track {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 0 0 60px;
+  }
+
+  .manga-panel {
+    position: relative;
+    margin-bottom: 0;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+  }
+  .manga-panel.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .manga-panel img {
+    width: 100%;
+    display: block;
+  }
+
+  /* connector line between panels */
+  .manga-panel:not(:last-child)::after {
+    content: '';
+    display: block;
+    width: 2px;
+    height: 24px;
+    background: linear-gradient(180deg, #ddd 0%, #eee 100%);
+    margin: 0 auto;
+  }
+
+  /* ========== PAIN POINTS ========== */
+  .pain-section {
+    background: linear-gradient(160deg, #1A1A2E 0%, #16213E 100%);
+    color: #fff;
+    text-align: center;
+  }
+  .pain-section .section-label { color: var(--sun); }
+  .pain-section .section-title { color: #fff; }
+  .pain-section .section-desc { color: rgba(255,255,255,0.65); }
+
+  .pain-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    max-width: 700px;
+    margin: 36px auto 0;
+  }
+  .pain-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 24px 20px;
+    text-align: left;
+    transition: background 0.2s;
+  }
+  .pain-card:hover { background: rgba(255,255,255,0.1); }
+  .pain-card .emoji { font-size: 28px; margin-bottom: 12px; }
+  .pain-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 8px; line-height: 1.5; }
+  .pain-card p { font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.7; }
+
+  /* ========== PROMISE ========== */
+  .promise-section {
+    background: var(--sky-light);
+    text-align: center;
+  }
+  .promise-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 700px;
+    margin: 36px auto 0;
+  }
+  .promise-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 28px 20px 24px;
+    box-shadow: 0 4px 20px rgba(74,144,217,0.1);
+    border-top: 4px solid var(--sky);
+    text-align: left;
+  }
+  .promise-num {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--sky);
+    opacity: 0.25;
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+  .promise-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 8px; color: var(--dark); }
+  .promise-card p { font-size: 13px; color: var(--muted); line-height: 1.7; }
+
+  /* ========== FLOW ========== */
+  .flow-section { background: var(--warm); text-align: center; }
+  .flow-steps {
+    max-width: 500px;
+    margin: 40px auto 0;
+    position: relative;
+  }
+  .flow-steps::before {
+    content: '';
+    position: absolute;
+    left: 34px; top: 28px; bottom: 28px;
+    width: 2px;
+    background: linear-gradient(180deg, var(--sun) 0%, var(--sky) 100%);
+  }
+  .flow-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    text-align: left;
+    margin-bottom: 32px;
+    position: relative;
+  }
+  .step-circle {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--sun) 0%, #F5A623 100%);
+    color: #fff;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 22px;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 4px 16px rgba(245,166,35,0.35);
+    z-index: 1;
+  }
+  .flow-step:nth-child(2) .step-circle { background: linear-gradient(135deg, #5BAD6F 0%, #4A90D9 100%); box-shadow: 0 4px 16px rgba(74,144,217,0.3); }
+  .flow-step:nth-child(3) .step-circle { background: linear-gradient(135deg, var(--sky) 0%, #5B6AD9 100%); box-shadow: 0 4px 16px rgba(74,144,217,0.35); }
+  .step-body { padding-top: 8px; }
+  .step-body h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+  .step-body p { font-size: 13px; color: var(--muted); line-height: 1.7; }
+
+  /* ========== FAQ ========== */
+  .faq-section { background: #fff; text-align: center; }
+  .faq-list { max-width: 600px; margin: 36px auto 0; text-align: left; }
+  .faq-item {
+    border-bottom: 1px solid #eee;
+    padding: 20px 0;
+  }
+  .faq-q {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--dark);
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .faq-q .q-mark {
+    background: var(--sun);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 900;
+    padding: 2px 8px;
+    border-radius: 4px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .faq-a {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-top: 10px;
+    padding-left: 32px;
+  }
+
+  /* ========== FINAL CTA ========== */
+  .cta-section {
+    background: linear-gradient(155deg, #1A1A2E 0%, #0F3460 100%);
+    text-align: center;
+    padding: 72px 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    top: -100px; left: 50%;
+    transform: translateX(-50%);
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(245,166,35,0.12) 0%, transparent 65%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  .cta-section .section-label { color: var(--sun); }
+  .cta-section .section-title { color: #fff; margin-bottom: 16px; }
+  .cta-section .section-desc { color: rgba(255,255,255,0.6); margin-bottom: 36px; }
+
+  .already-scheduled-note {
+    position: relative;
+    z-index: 1;
+    max-width: 760px;
+    margin: 0 auto 22px;
+    padding: 14px 16px;
+    border-radius: 18px;
+    background: rgba(255,255,255,0.10);
+    border: 1px solid rgba(255,255,255,0.22);
+    color: rgba(255,255,255,0.88);
+    font-size: 14px;
+    line-height: 1.8;
+    text-align: center;
+  }
+  .already-scheduled-note strong {
+    display: block;
+    color: #fff;
+    font-size: 15px;
+    margin-bottom: 2px;
+  }
+
+  .cta-note {
+    margin-top: 20px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+    line-height: 1.8;
+  }
+
+  /* ========== FOOTER ========== */
+  footer {
+    background: #111;
+    color: rgba(255,255,255,0.4);
+    text-align: center;
+    font-size: 12px;
+    padding: 24px 20px;
+    line-height: 1.8;
+  }
+
+  /* ========== STICKY CTA ========== */
+  .sticky-cta {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: rgba(26,26,46,0.95);
+    backdrop-filter: blur(10px);
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    z-index: 999;
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+    box-shadow: 0 -4px 24px rgba(0,0,0,0.3);
+  }
+  .sticky-cta.visible { transform: translateY(0); }
+  .sticky-text { color: #fff; font-size: 13px; font-weight: 500; flex: 1; }
+  .sticky-text strong { color: var(--sun); }
+  .btn-sticky {
+    background: linear-gradient(135deg, #E8542A, #F5A623);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 12px 22px;
+    border-radius: 40px;
+    text-decoration: none;
+    white-space: nowrap;
+    box-shadow: 0 4px 16px rgba(232,84,42,0.4);
+    transition: transform 0.15s;
+  }
+  .btn-sticky:hover { transform: scale(1.04); }
+
+  /* ========== ANIMATIONS ========== */
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes pulse-ring {
+    0%   { box-shadow: 0 0 0 0 rgba(232,84,42,0.5); }
+    70%  { box-shadow: 0 0 0 14px rgba(232,84,42,0); }
+    100% { box-shadow: 0 0 0 0 rgba(232,84,42,0); }
+  }
+  .btn-main { animation: pulse-ring 2.4s ease 1.5s infinite; }
+
+  /* ========== DIVIDER ========== */
+  .wave-divider {
+    width: 100%; overflow: hidden; line-height: 0;
+    background: #fff;
+  }
+  .wave-divider svg { display: block; }
+
+
+  /* ========== BOOKING FORM ========== */
+  .booking-card {
+    position: relative;
+    z-index: 1;
+    max-width: 760px;
+    margin: 38px auto 0;
+    background: #fff;
+    color: var(--text);
+    border-radius: 26px;
+    padding: 26px 18px 22px;
+    box-shadow: 0 18px 46px rgba(0,0,0,0.26);
+    text-align: left;
+  }
+  .booking-card-header {
+    text-align: center;
+    padding: 4px 6px 20px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 22px;
+  }
+  .booking-badge {
+    display: inline-block;
+    background: var(--sun-light);
+    color: #A85B00;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 999px;
+    margin-bottom: 10px;
+  }
+  .booking-card-header h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(21px, 5vw, 30px);
+    color: var(--dark);
+    line-height: 1.45;
+    margin-bottom: 8px;
+  }
+  .booking-card-header p {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+  .booking-step { margin-bottom: 24px; }
+  .booking-step-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 12px;
+  }
+  .booking-step-num {
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--sky), var(--green));
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-family: 'Noto Serif JP', serif;
+    font-weight: 900;
+    flex-shrink: 0;
+  }
+  .booking-date-grid,
+  .booking-time-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+  @media (min-width: 640px) {
+    .booking-date-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .booking-time-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  }
+  .booking-date-btn,
+  .booking-time-btn {
+    border: 1.5px solid #E5E7EB;
+    background: #fff;
+    border-radius: 17px;
+    min-height: 64px;
+    padding: 12px 8px;
+    cursor: pointer;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: var(--text);
+    transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease, background 0.16s ease;
+  }
+  .booking-date-btn:hover,
+  .booking-time-btn:hover {
+    transform: translateY(-2px);
+    border-color: var(--sky);
+    box-shadow: 0 8px 18px rgba(74,144,217,0.16);
+  }
+  .booking-date-btn.is-selected,
+  .booking-time-btn.is-selected {
+    border-color: var(--sky);
+    background: var(--sky-light);
+    box-shadow: inset 0 0 0 1px var(--sky);
+  }
+  .booking-date-btn .date-main {
+    display: block;
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1.1;
+  }
+  .booking-date-btn .date-sub {
+    display: block;
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 5px;
+    font-weight: 700;
+  }
+  .booking-date-btn .date-label {
+    display: inline-block;
+    margin-top: 6px;
+    background: #FFF3D6;
+    color: #B45F00;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 7px;
+    border-radius: 999px;
+  }
+  .booking-time-btn {
+    min-height: 54px;
+    font-size: 15px;
+    font-weight: 700;
+  }
+  .booking-field-grid {
+    display: grid;
+    gap: 12px;
+  }
+  @media (min-width: 640px) {
+    .booking-field-grid { grid-template-columns: 1fr 1fr; }
+    .booking-field.full { grid-column: 1 / -1; }
+  }
+  .booking-field label {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 6px;
+  }
+  .booking-field input,
+  .booking-field textarea,
+  .booking-field select {
+    width: 100%;
+    border: 1.5px solid #E5E7EB;
+    border-radius: 14px;
+    padding: 13px 12px;
+    font-size: 16px;
+    font-family: 'Noto Sans JP', sans-serif;
+    outline: none;
+    color: var(--text);
+    background: #fff;
+  }
+  .booking-field input:focus,
+  .booking-field textarea:focus,
+  .booking-field select:focus {
+    border-color: var(--sky);
+    box-shadow: 0 0 0 4px rgba(74,144,217,0.12);
+  }
+  .booking-assurance {
+    background: #FFF8EE;
+    border: 1px solid #FFE0AA;
+    border-radius: 15px;
+    padding: 12px 14px;
+    color: #7A4400;
+    font-size: 13px;
+    line-height: 1.75;
+    margin: 8px 0 16px;
+  }
+  .booking-submit {
+    width: 100%;
+    border: none;
+    border-radius: 60px;
+    background: linear-gradient(135deg, #E8542A 0%, #F5A623 100%);
+    color: #fff;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 17px 18px;
+    cursor: pointer;
+    box-shadow: 0 10px 26px rgba(232,84,42,0.28);
+    transition: transform 0.16s ease, box-shadow 0.16s ease, opacity 0.16s ease;
+  }
+  .booking-submit:hover { transform: translateY(-2px); box-shadow: 0 14px 34px rgba(232,84,42,0.36); }
+  .booking-submit:disabled { opacity: 0.62; cursor: not-allowed; transform: none; }
+  .booking-error {
+    display: none;
+    color: #C62828;
+    font-size: 13px;
+    font-weight: 700;
+    margin: 8px 0 12px;
+    text-align: center;
+  }
+  .booking-complete {
+    display: none;
+    margin-top: 14px;
+    padding: 14px;
+    border-radius: 16px;
+    background: #E8F5E9;
+    color: #256337;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.7;
+  }
+  .booking-privacy {
+    margin-top: 10px;
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 1.7;
+    text-align: center;
+  }
+
+
+
+  /* ========== SMARTPHONE FIRST OPTIMIZATION ========== */
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    padding-bottom: calc(84px + env(safe-area-inset-bottom));
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  a,
+  button,
+  input,
+  select,
+  textarea {
+    -webkit-tap-highlight-color: rgba(232,84,42,0.16);
+  }
+  button,
+  .btn-main,
+  .btn-sticky,
+  .booking-date-btn,
+  .booking-time-btn,
+  .booking-submit {
+    touch-action: manipulation;
+  }
+  #cta,
+  #bookingFormArea {
+    scroll-margin-top: 14px;
+  }
+
+  .mobile-bridge {
+    display: none;
+  }
+
+  @media (hover: none) {
+    .btn-main:hover,
+    .btn-sticky:hover,
+    .booking-date-btn:hover,
+    .booking-time-btn:hover,
+    .booking-submit:hover,
+    .pain-card:hover {
+      transform: none;
+      box-shadow: inherit;
+    }
+  }
+
+  @media (max-width: 480px) {
+    section {
+      padding: 44px 16px;
+    }
+    .hero {
+      padding: 34px 16px 28px;
+    }
+    .hero-eyebrow {
+      font-size: 11px;
+      padding: 5px 12px;
+      margin-bottom: 14px;
+      letter-spacing: 0.08em;
+    }
+    .hero h1 {
+      font-size: clamp(25px, 7.4vw, 31px);
+      line-height: 1.38;
+      margin-bottom: 12px;
+    }
+    .hero h1 em::after {
+      height: 2px;
+    }
+    .hero-sub {
+      font-size: 14px;
+      line-height: 1.75;
+      margin-bottom: 22px;
+    }
+    .btn-main {
+      width: 100%;
+      max-width: 360px;
+      font-size: 16px;
+      padding: 16px 18px;
+      line-height: 1.45;
+    }
+    .btn-main small {
+      font-size: 10px;
+    }
+    .btn-sub {
+      margin-top: 12px;
+      font-size: 12px;
+    }
+    .trust-bar {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+      padding: 12px 14px;
+      font-size: 12px;
+      line-height: 1.5;
+      justify-content: stretch;
+    }
+
+    .mobile-bridge {
+      display: block;
+      background: #fff;
+      padding: 16px 14px 18px;
+      border-bottom: 1px solid #eee;
+    }
+    .mobile-bridge-inner {
+      max-width: 420px;
+      margin: 0 auto;
+      border: 1px solid #F3D6A8;
+      background: #FFF8EE;
+      border-radius: 18px;
+      padding: 14px;
+      box-shadow: 0 8px 24px rgba(245,166,35,0.13);
+    }
+    .mobile-bridge-label {
+      display: inline-block;
+      color: #A85B00;
+      background: #fff;
+      border-radius: 999px;
+      padding: 4px 10px;
+      font-size: 11px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .mobile-bridge-title {
+      font-family: 'Noto Serif JP', serif;
+      color: var(--dark);
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1.55;
+      margin-bottom: 6px;
+    }
+    .mobile-bridge-text {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.75;
+      margin-bottom: 12px;
+    }
+    .mobile-bridge-btn {
+      display: block;
+      width: 100%;
+      text-align: center;
+      text-decoration: none;
+      background: linear-gradient(135deg, #E8542A 0%, #F5A623 100%);
+      color: #fff;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 13px 12px;
+      box-shadow: 0 8px 18px rgba(232,84,42,0.24);
+    }
+
+    .manga-header {
+      padding: 42px 16px 28px;
+    }
+    .story-track {
+      max-width: 100%;
+      padding: 0 10px 44px;
+    }
+    .manga-panel:not(:last-child)::after {
+      height: 18px;
+    }
+    .section-label {
+      font-size: 10px;
+      letter-spacing: 0.14em;
+    }
+    .section-title {
+      font-size: clamp(22px, 6.2vw, 28px);
+      line-height: 1.48;
+    }
+    .section-desc {
+      font-size: 14px;
+      line-height: 1.85;
+    }
+    .pain-cards,
+    .promise-grid {
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .pain-card,
+    .promise-card {
+      border-radius: 16px;
+      padding: 20px 16px;
+    }
+    .flow-steps {
+      margin-top: 28px;
+    }
+    .flow-steps::before {
+      left: 25px;
+    }
+    .flow-step {
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+    .step-circle {
+      width: 52px;
+      height: 52px;
+      font-size: 18px;
+    }
+    .step-body {
+      padding-top: 2px;
+    }
+    .faq-list {
+      margin-top: 24px;
+    }
+    .faq-item {
+      padding: 16px 0;
+    }
+    .faq-q {
+      font-size: 14px;
+      line-height: 1.65;
+    }
+    .faq-a {
+      padding-left: 0;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .cta-section {
+      padding: 48px 14px calc(108px + env(safe-area-inset-bottom));
+    }
+    .cta-section .section-desc {
+      margin-bottom: 24px;
+    }
+    .already-scheduled-note {
+      margin: 0 auto 18px;
+      padding: 12px 12px;
+      border-radius: 16px;
+      font-size: 12.5px;
+      line-height: 1.75;
+      text-align: left;
+    }
+    .already-scheduled-note strong {
+      font-size: 13.5px;
+    }
+    .booking-card {
+      margin: 26px auto 0;
+      border-radius: 22px;
+      padding: 20px 12px 18px;
+      box-shadow: 0 14px 34px rgba(0,0,0,0.22);
+    }
+    .booking-card-header {
+      padding: 2px 4px 16px;
+      margin-bottom: 18px;
+    }
+    .booking-badge {
+      font-size: 11px;
+      margin-bottom: 8px;
+    }
+    .booking-card-header h3 {
+      font-size: 22px;
+      line-height: 1.45;
+    }
+    .booking-card-header p {
+      font-size: 12.5px;
+      line-height: 1.75;
+    }
+    .booking-step {
+      margin-bottom: 20px;
+    }
+    .booking-step-title {
+      align-items: flex-start;
+      font-size: 14px;
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+    .booking-step-num {
+      width: 25px;
+      height: 25px;
+      font-size: 12px;
+      margin-top: 1px;
+    }
+    .booking-date-grid,
+    .booking-time-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 9px;
+    }
+    .booking-date-btn,
+    .booking-time-btn {
+      min-height: 58px;
+      padding: 10px 6px;
+      border-radius: 15px;
+    }
+    .booking-date-btn .date-main {
+      font-size: 18px;
+    }
+    .booking-date-btn .date-sub {
+      font-size: 11px;
+    }
+    .booking-time-btn {
+      font-size: 14px;
+    }
+    .booking-field-grid {
+      gap: 10px;
+    }
+    .booking-field label {
+      font-size: 12.5px;
+    }
+    .booking-field input,
+    .booking-field textarea,
+    .booking-field select {
+      min-height: 48px;
+      font-size: 16px;
+      border-radius: 13px;
+      padding: 12px 11px;
+    }
+    .booking-field textarea {
+      min-height: 86px;
+    }
+    .booking-assurance {
+      font-size: 12.5px;
+      line-height: 1.75;
+      padding: 11px 12px;
+    }
+    .booking-submit {
+      min-height: 56px;
+      font-size: 16px;
+      padding: 15px 14px;
+      line-height: 1.45;
+    }
+    .booking-privacy {
+      font-size: 10.5px;
+    }
+
+    .sticky-cta {
+      padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+      gap: 8px;
+      align-items: center;
+    }
+    .sticky-text {
+      font-size: 11px;
+      line-height: 1.45;
+    }
+    .btn-sticky {
+      padding: 11px 15px;
+      font-size: 13px;
+    }
+    footer {
+      padding-bottom: calc(96px + env(safe-area-inset-bottom));
+    }
+  }
+
+
+
+  /* ========== MOBILE FIRST FINAL PATCH ========== */
+  html { scroll-behavior: smooth; }
+  body { -webkit-text-size-adjust: 100%; padding-bottom: calc(84px + env(safe-area-inset-bottom)); }
+  img { max-width: 100%; height: auto; }
+  .hero, section { padding-left: max(16px, env(safe-area-inset-left)); padding-right: max(16px, env(safe-area-inset-right)); }
+  .hero { min-height: auto; padding-top: 44px; padding-bottom: 38px; }
+  .hero-sub br, .section-desc br { display: none; }
+  .btn-main, .btn-sticky, .esco-submit { min-height: 52px; display: inline-flex; align-items: center; justify-content: center; touch-action: manipulation; }
+  .btn-main { width: min(100%, 360px); padding: 16px 22px; font-size: 17px; line-height: 1.45; }
+  .btn-main small { line-height: 1.45; }
+  .trust-bar { gap: 8px; padding: 12px 14px; font-size: 12px; }
+  .trust-bar span { width: 100%; justify-content: center; }
+  .manga-header { padding: 42px 16px 28px; }
+  .story-track { max-width: 430px; padding-left: 12px; padding-right: 12px; }
+  .manga-panel { border-radius: 18px; overflow: hidden; box-shadow: 0 10px 28px rgba(26,26,46,0.08); background: #fff; }
+  .manga-panel img { display: block; width: 100%; }
+  .pain-cards, .promise-grid { grid-template-columns: 1fr; gap: 14px; }
+  .pain-card, .promise-card { padding: 20px 18px; }
+  .flow-steps { margin-top: 28px; }
+  .flow-step { gap: 14px; margin-bottom: 24px; }
+  .step-circle { width: 54px; height: 54px; font-size: 18px; }
+  .flow-steps::before { left: 27px; }
+  .cta-section { padding-top: 50px; padding-bottom: 46px; }
+  .cta-section .section-title { font-size: clamp(26px, 9vw, 38px); line-height: 1.6; }
+  .cta-section .section-desc { font-size: 15px; line-height: 1.9; }
+  .esco-calendar-form { padding: 22px 12px 42px; }
+  .esco-calendar-head { padding: 22px 16px 16px; }
+  .esco-form-body { padding: 16px; }
+  .esco-date-grid, .esco-time-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
+  .esco-date-btn, .esco-time-btn { min-height: 56px; padding: 12px 6px; }
+  .esco-date-btn .month-day { font-size: 19px; }
+  .esco-input-grid { grid-template-columns: 1fr; }
+  .esco-field input, .esco-field textarea, .esco-field select { font-size: 16px; min-height: 50px; }
+  .scheduled-note, .mobile-fast-cta { margin-left: 0; margin-right: 0; }
+  .sticky-cta { padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); }
+  .sticky-text { font-size: 12px; line-height: 1.5; }
+  .btn-sticky { padding: 11px 15px; font-size: 13px; }
+
+  @media (max-width: 390px) {
+    .hero h1 { font-size: 25px; }
+    .section-title { font-size: 23px; }
+    .cta-section .section-title { font-size: 29px; }
+    .btn-main { font-size: 16px; }
+    .sticky-text { display: none; }
+    .btn-sticky { width: 100%; }
+  }
+
+  @media (min-width: 768px) {
+    body { padding-bottom: 0; }
+    .trust-bar span { width: auto; }
+    .hero-sub br, .section-desc br { display: initial; }
+  }
+
+</style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-eyebrow">🌞 夫婦で納得して決める 太陽光・蓄電池 無料相談</div>
+  <h1>ひとりで聞いて、<br>ひとりで悩まない。<br><em>夫婦で同じ説明</em>を聞く。</h1>
+  <p class="hero-sub">
+    奥様だけ・ご主人様だけで聞くと、<br>
+    家に帰ってから「どう伝えたらいいの？」となりがちです。<br>
+    だから、まずは夫婦で同じ材料を持つための相談会です。
+  </p>
+  <div class="hero-cta-wrap">
+    <a href="#cta" class="btn-main">
+      日時だけ仮予約する
+      <small>契約ではありません／ご夫婦参加歓迎</small>
+    </a>
+    <br>
+    <a href="#story" class="btn-sub">夫婦で意見が割れそうな方へ ↓</a>
+  </div>
+</section>
+
+<!-- ===== TRUST BAR ===== -->
+<div class="trust-bar">
+  <span><span class="icon">✅</span> 契約の押し付け一切なし</span>
+  <span><span class="icon">✅</span> ご夫婦同席・後日共有OK</span>
+  <span><span class="icon">✅</span> 無料・資料持ち帰りOK</span>
+</div>
+<!-- ===== MOBILE QUICK BRIDGE ===== -->
+<div class="mobile-bridge" aria-label="スマホ向け仮予約案内">
+  <div class="mobile-bridge-inner">
+    <div class="mobile-bridge-label">スマホで30秒</div>
+    <div class="mobile-bridge-title">奥様だけ・ご主人様だけで抱え込む前に、日時だけ押さえられます。</div>
+    <p class="mobile-bridge-text">仮予約は契約ではありません。ご夫婦で同じ説明を聞くための最初の一歩です。</p>
+    <a href="#cta" class="mobile-bridge-btn">日時を仮予約する</a>
+  </div>
+</div>
+
+<!-- ===== STORY / MANGA ===== -->
+<div class="manga-section" id="story">
+  <div class="manga-header">
+    <div class="section-label">CASE｜Before / After</div>
+    <h2 class="section-title">奥様だけで聞いたあと、<br>言葉に詰まった。</h2>
+    <p class="section-desc">「夫にどう説明すればいいの？」「反対されたらどうしよう」<br>その小さな不安を、夫婦で同じ説明を聞くことでほどいていく物語です。</p>
+  </div>
+
+  <div class="story-track">
+
+    <div class="manga-panel">
+      <img src="images/manga-panel-01.jpg" loading="lazy" decoding="async" alt="太陽光と蓄電池は、勢いで決めるものじゃない。夫婦で納得してまず話を聞く。">
+    </div>
+
+<div class="manga-panel">
+      <img src="images/manga-panel-02.jpg" loading="lazy" decoding="async" alt="最初はちょっと気になっただけだった">
+    </div>
+
+    <div class="manga-panel">
+      <img src="images/manga-panel-03.jpg" loading="lazy" decoding="async" alt="毎月の負担や停電への不安があった">
+    </div>
+
+    <div class="manga-panel">
+      <img src="images/manga-panel-04.jpg" loading="lazy" decoding="async" alt="すぐ決める話じゃなく、まず確認する感じ">
+    </div>
+
+    <div class="manga-panel">
+      <img src="images/manga-panel-05.jpg" loading="lazy" decoding="async" alt="一度聞いてみたいかも。ご都合だけ確認しましょうか">
+    </div>
+
+    <div class="manga-panel">
+      <img src="images/manga-panel-06.jpg" loading="lazy" decoding="async" alt="催事で話を聞いて、相談の予約を入れた">
+    </div>
+
+    <div class="manga-panel">
+      <img src="images/manga-panel-07.jpg" loading="lazy" decoding="async" alt="夫に話すと、なんでその場で予約したの？と言われた">
+    </div>
+
+    <div class="manga-panel">
+      <img src="images/manga-panel-08.jpg" loading="lazy" decoding="async" alt="私が説得するんじゃなくて、一緒に確認できればいい">
+    </div>
+
+    <div class="manga-panel">
+      <img src="images/manga-panel-09.jpg" loading="lazy" decoding="async" alt="その場で契約じゃなくて、まず確認するんだね">
+    </div>
+
+    <div class="manga-panel">
+      <img src="images/manga-panel-10.jpg" loading="lazy" decoding="async" alt="それなら一緒に話を聞いてみようか">
+    </div>
+
+      </div>
+</div>
+
+<!-- ===== PAIN ===== -->
+<section class="pain-section">
+  <div class="section-label">NAMELESS ENEMY｜名もなきブロック</div>
+  <h2 class="section-title">反対しているのは、<br>夫でも妻でもありません。</h2>
+  <p class="section-desc">本当の壁は、情報不足・説明しづらさ・家族の温度差です。そこを先に整えると、導入判断はずっと前に進みやすくなります。</p>
+  <div class="pain-cards">
+    <div class="pain-card">
+      <div class="emoji">😰</div>
+      <h3>奥様だけで聞くと、家で説明しきれない</h3>
+      <p>良さは感じても、費用・効果・必要性をそのまま伝えるのは意外と難しいものです。</p>
+    </div>
+    <div class="pain-card">
+      <div class="emoji">💬</div>
+      <h3>ご主人様だけで聞くと、奥様が置いていかれる</h3>
+      <p>数字だけで進むと、「家のことなのに聞いていない」という不安が残りやすくなります。</p>
+    </div>
+    <div class="pain-card">
+      <div class="emoji">💸</div>
+      <h3>お金の話になると、急に不安が大きくなる</h3>
+      <p>初期費用・月々・将来の電気代。見えない数字が多いほど、家族の判断は止まりやすくなります。</p>
+    </div>
+    <div class="pain-card">
+      <div class="emoji">🤔</div>
+      <h3>営業されるかも、という警戒心がある</h3>
+      <p>知りたいだけなのに売り込まれるのでは、という不安があると、最初の一歩が重たくなります。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROMISE ===== -->
+<section class="promise-section">
+  <div class="section-label">BENEFIT & EVIDENCE</div>
+  <h2 class="section-title">夫婦の温度差を、<br>納得の材料に変える相談会です</h2>
+  <p class="section-desc">どちらかが説得するのではなく、同じ資料・同じ数字・同じ前提で判断できる状態をつくります。</p>
+  <div class="promise-grid">
+    <div class="promise-card">
+      <div class="promise-num">01</div>
+      <h3>同じ説明を、夫婦で聞ける</h3>
+      <p>奥様だけ・ご主人様だけの理解で進めず、ご家庭の判断材料をそろえることを大切にします。</p>
+    </div>
+    <div class="promise-card">
+      <div class="promise-num">02</div>
+      <h3>断ってもいい前提で話します</h3>
+      <p>その場で決めさせるための説明ではありません。合わない場合は、合わない理由まで正直にお伝えします。</p>
+    </div>
+    <div class="promise-card">
+      <div class="promise-num">03</div>
+      <h3>わが家専用の数字で確認</h3>
+      <p>屋根・電気使用量・生活スタイルをもとに、一般論ではなくご家庭ごとの判断材料をお渡しします。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FLOW ===== -->
+<section class="flow-section">
+  <div class="section-label">URGENCY｜まず日程を押さえる</div>
+  <h2 class="section-title">迷っている間に、<br>家族で話す機会は流れていきます</h2>
+  <p class="section-desc">まずは希望日時を仮予約してください。予約は契約ではありません。夫婦で同じ説明を聞くための、最初の一歩です。</p>
+  <div class="flow-steps">
+    <div class="flow-step">
+      <div class="step-circle">1</div>
+      <div class="step-body">
+        <h3>希望日時を仮予約</h3>
+        <p>ご都合のよい日時を選びます。第1希望を押さえることで、相談の流れが前に進みます。</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="step-circle">2</div>
+      <div class="step-body">
+        <h3>担当者が確認連絡</h3>
+        <p>ご夫婦で聞けるか、まずはお一人で聞くか、無理のない形で日程を正式に調整します。</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="step-circle">3</div>
+      <div class="step-body">
+        <h3>同じ資料で確認・持ち帰り</h3>
+        <p>資料はそのままお渡しします。夫婦で見直してから、進める・やめるを決めていただけます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="faq-section">
+  <div class="section-label">よくあるご質問</div>
+  <h2 class="section-title">夫婦で聞く前の<br>「気になること」に答えます</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q"><span class="q-mark">Q</span>夫婦そろって聞いたほうがいいですか？</div>
+      <div class="faq-a">できればご夫婦で聞いていただくのがおすすめです。片方だけが聞くと、あとで説明する負担が大きくなり、反対や不安が残りやすいためです。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span class="q-mark">Q</span>奥様だけ・ご主人様だけでも先に相談できますか？</div>
+      <div class="faq-a">はい、可能です。その場合も、あとでご家族に共有しやすいように、資料や判断ポイントを分かりやすく整理してお渡しします。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span class="q-mark">Q</span>その場で決めないといけませんか？</div>
+      <div class="faq-a">いいえ。その場での契約を前提にした相談ではありません。ご家庭に合うかどうかを知り、夫婦で持ち帰って考えるための時間です。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span class="q-mark">Q</span>希望日時を選ぶと、予約確定ですか？</div>
+      <div class="faq-a">フォーム送信時点では仮予約です。担当者が確認のご連絡を差し上げ、ご都合を確認したうえで正式な日程として確定します。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span class="q-mark">Q</span>すでに日程が決まっている場合も入力が必要ですか？</div>
+      <div class="faq-a">いいえ、入力は不要です。すでに担当者から日時のご案内を受けている方は、その日時でそのままお待ちください。日程変更や追加のご相談がある場合のみご連絡ください。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FINAL CTA / BOOKING FORM ===== -->
+<section class="cta-section" id="cta">
+  <div class="section-label">KICKOFF｜最初の一歩</div>
+  <h2 class="section-title">まずは希望日時を<br>ひとつ押さえませんか。</h2>
+  <p class="section-desc">
+    予約は契約ではありません。<br>
+    まだ日程が決まっていない方だけ、下のフォームから希望日時をお選びください。
+  </p>
+
+  <div class="already-scheduled-note">
+    <strong>すでに日程が決まっているお客様へ</strong>
+    このフォームの入力は不要です。ご案内済みの日時でそのままお待ちください。日程変更や追加のご相談がある場合のみ、担当者へご連絡ください。
+  </div>
+
+  <div class="booking-card" id="bookingFormArea">
+    <div class="booking-card-header">
+      <span class="booking-badge">最短30秒｜希望日時の仮予約</span>
+      <h3>無料相談の希望日時を<br>仮予約してください</h3>
+      <p>まだ日程が決まっていない方はこちらからお選びください。すでに日程が決まっている方は入力不要です。</p>
+    </div>
+
+    <!--
+      送信先設定：Google Apps ScriptのWebアプリURLを、下部script内の GAS_WEB_APP_URL に入れてください。
+      URL未設定のままでも画面表示と入力確認はできますが、スプレッドシート保存はされません。
+    -->
+    <form id="hopeDateForm" method="POST" target="hidden_iframe">
+      <input type="hidden" name="source" value="LP希望日時仮予約フォーム">
+      <input type="hidden" name="preferred_date" id="preferredDate">
+      <input type="hidden" name="preferred_time" id="preferredTime">
+
+      <div class="booking-step">
+        <div class="booking-step-title"><span class="booking-step-num">1</span>第1希望日を選択してください</div>
+        <div class="booking-date-grid" id="dateGrid"></div>
+      </div>
+
+      <div class="booking-step">
+        <div class="booking-step-title"><span class="booking-step-num">2</span>第1希望の時間帯を選択してください</div>
+        <div class="booking-time-grid" id="timeGrid">
+          <button type="button" class="booking-time-btn" data-time="午前">午前</button>
+          <button type="button" class="booking-time-btn" data-time="昼頃">昼頃</button>
+          <button type="button" class="booking-time-btn" data-time="午後">午後</button>
+          <button type="button" class="booking-time-btn" data-time="夕方">夕方</button>
+        </div>
+      </div>
+
+      <div class="booking-step">
+        <div class="booking-step-title"><span class="booking-step-num">3</span>第2希望があれば入力してください <small style="font-weight:500;color:#777;">任意</small></div>
+        <div class="booking-field-grid">
+          <div class="booking-field">
+            <label for="secondPreferredDate">第2希望日 任意</label>
+            <input id="secondPreferredDate" name="second_preferred_date" type="date">
+          </div>
+          <div class="booking-field">
+            <label for="secondPreferredTime">第2希望時間 任意</label>
+            <select id="secondPreferredTime" name="second_preferred_time">
+              <option value="">選択してください</option>
+              <option value="午前">午前</option>
+              <option value="昼頃">昼頃</option>
+              <option value="午後">午後</option>
+              <option value="夕方">夕方</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="booking-step">
+        <div class="booking-step-title"><span class="booking-step-num">4</span>ご連絡先・ご家庭の状況を入力してください</div>
+        <div class="booking-field-grid">
+          <div class="booking-field">
+            <label for="customerName">お名前 *</label>
+            <input id="customerName" name="name" type="text" autocomplete="name" required placeholder="例：山田 太郎">
+          </div>
+          <div class="booking-field">
+            <label for="customerTel">電話番号 *</label>
+            <input id="customerTel" name="phone" type="tel" autocomplete="tel" required placeholder="例：09012345678">
+          </div>
+          <div class="booking-field full">
+            <label for="attendanceType">当日お話を聞かれる方 *</label>
+            <select id="attendanceType" name="attendance" required>
+              <option value="">選択してください</option>
+              <option value="ご夫婦で聞きたい">ご夫婦で聞きたい</option>
+              <option value="奥様が先に聞きたい">奥様が先に聞きたい</option>
+              <option value="ご主人様が先に聞きたい">ご主人様が先に聞きたい</option>
+              <option value="まだ未定">まだ未定</option>
+            </select>
+          </div>
+          <div class="booking-field full">
+            <label for="customerContact">メールまたはLINE名 任意</label>
+            <input id="customerContact" name="contact_extra" type="text" placeholder="メール・LINE名など">
+          </div>
+          <div class="booking-field full">
+            <label for="customerMemo">ご相談内容 任意</label>
+            <textarea id="customerMemo" name="memo" rows="3" placeholder="例：妻にも聞いてほしい／夫が費用面を気にしている／電気代が高い／停電対策を知りたい など"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="booking-assurance">※この送信は「相談日時の仮予約」です。契約ではありません。すでに日程が決まっている方は入力不要です。担当者が確認のご連絡を差し上げ、ご夫婦のご都合に合わせて正式に日程を確定します。</div>
+      <p class="booking-error" id="bookingError">第1希望日と時間帯を選択してください。</p>
+      <button type="submit" class="booking-submit" id="bookingSubmit">無料相談の日時を仮予約する</button>
+      <p class="booking-privacy">送信いただいた内容は、日程調整・ご相談対応・資料準備の目的で使用します。</p>
+      <div class="booking-complete" id="bookingComplete">仮予約ありがとうございます。担当者より確認のご連絡を差し上げ、正式な日時を調整いたします。</div>
+    </form>
+    <iframe name="hidden_iframe" style="display:none;"></iframe>
+  </div>
+
+  <p class="cta-note">
+    ご相談・仮予約は無料です。<br>
+    しつこい営業・その場での決断要求は一切行いません。
+  </p>
+</section>
+
+<footer>
+  <p>© 2025 太陽光・蓄電池 無料相談会 | プライバシーポリシー | 特定商取引法に基づく表記</p>
+</footer>
+
+<!-- ===== STICKY CTA ===== -->
+<div class="sticky-cta" id="stickyCta">
+  <div class="sticky-text"><strong>30秒で仮予約</strong><br>予約は契約ではありません</div>
+  <a href="#cta" class="btn-sticky">希望日時を仮予約</a>
+</div>
+
+<script>
+  // Scroll-triggered manga panel reveal
+  const panels = document.querySelectorAll('.manga-panel');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.15 });
+  panels.forEach(p => observer.observe(p));
+
+  // Sticky CTA show after scrolling past hero
+  const stickyCta = document.getElementById('stickyCta');
+  window.addEventListener('scroll', () => {
+    stickyCta.classList.toggle('visible', window.scrollY > 400);
+  });
+
+
+
+  // LP希望日フォーム：日付ボタン生成・選択・送信制御
+  const GAS_WEB_APP_URL = ""; // ★Google Apps ScriptのWebアプリURLをここに入れてください
+  const daysToShow = 14;
+  const disabledDates = [
+    // 受付不可日がある場合は "2026-05-03", "2026-05-04" のように追加
+  ];
+  const weekdays = ["日", "月", "火", "水", "木", "金", "土"];
+  const hopeDateForm = document.getElementById('hopeDateForm');
+  const dateGrid = document.getElementById('dateGrid');
+  const preferredDate = document.getElementById('preferredDate');
+  const preferredTime = document.getElementById('preferredTime');
+  const bookingError = document.getElementById('bookingError');
+  const bookingSubmit = document.getElementById('bookingSubmit');
+  const bookingComplete = document.getElementById('bookingComplete');
+
+  function toYmd(date) {
+    const y = date.getFullYear();
+    const m = String(date.getMonth() + 1).padStart(2, '0');
+    const d = String(date.getDate()).padStart(2, '0');
+    return `${y}-${m}-${d}`;
+  }
+
+  function renderBookingDates() {
+    if (!dateGrid) return;
+    const today = new Date();
+    for (let i = 1; i <= daysToShow; i++) {
+      const date = new Date(today);
+      date.setDate(today.getDate() + i);
+      const ymd = toYmd(date);
+      if (disabledDates.includes(ymd)) continue;
+
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'booking-date-btn';
+      btn.dataset.date = ymd;
+      const md = `${date.getMonth() + 1}/${date.getDate()}`;
+      const wd = weekdays[date.getDay()];
+      const label = i <= 3 ? '早め' : (date.getDay() === 0 || date.getDay() === 6 ? '週末' : '');
+      btn.innerHTML = `<span class="date-main">${md}</span><span class="date-sub">${wd}曜日</span>${label ? `<span class="date-label">${label}</span>` : ''}`;
+      dateGrid.appendChild(btn);
+    }
+  }
+
+  function selectBookingButton(selector, selectedButton) {
+    document.querySelectorAll(selector).forEach(btn => btn.classList.remove('is-selected'));
+    selectedButton.classList.add('is-selected');
+  }
+
+  renderBookingDates();
+
+  if (dateGrid) {
+    dateGrid.addEventListener('click', (e) => {
+      const btn = e.target.closest('.booking-date-btn');
+      if (!btn) return;
+      selectBookingButton('.booking-date-btn', btn);
+      preferredDate.value = btn.dataset.date;
+      bookingError.style.display = 'none';
+    });
+  }
+
+  const timeGrid = document.getElementById('timeGrid');
+  if (timeGrid) {
+    timeGrid.addEventListener('click', (e) => {
+      const btn = e.target.closest('.booking-time-btn');
+      if (!btn) return;
+      selectBookingButton('.booking-time-btn', btn);
+      preferredTime.value = btn.dataset.time;
+      bookingError.style.display = 'none';
+    });
+  }
+
+  if (hopeDateForm) {
+    hopeDateForm.action = GAS_WEB_APP_URL || '#';
+    hopeDateForm.addEventListener('submit', (e) => {
+      if (!preferredDate.value || !preferredTime.value) {
+        e.preventDefault();
+        bookingError.style.display = 'block';
+        return;
+      }
+
+      if (!GAS_WEB_APP_URL) {
+        e.preventDefault();
+        bookingError.style.display = 'block';
+        bookingError.textContent = '送信先URLが未設定です。Google Apps ScriptのWebアプリURLを設定してください。';
+        return;
+      }
+
+      bookingSubmit.disabled = true;
+      bookingSubmit.textContent = '仮予約を送信中です...';
+      setTimeout(() => {
+        bookingComplete.style.display = 'block';
+        bookingSubmit.textContent = '仮予約を送信しました';
+      }, 900);
+    });
+  }
+
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
+</body>
+</html>
