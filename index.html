@@ -1149,6 +1149,60 @@
     .google-form-notice { margin: 0 14px 12px; font-size: 12.5px; }
   }
 
+
+  /* ========== TRUST BAR MOBILE ALIGNMENT FIX ========== */
+  .trust-bar {
+    align-items: center;
+  }
+  .trust-bar > span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-width: 0;
+    line-height: 1.55;
+  }
+  .trust-bar > span .icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: auto !important;
+    min-width: 22px;
+    flex: 0 0 22px;
+    line-height: 1;
+  }
+  @media (max-width: 640px) {
+    .trust-bar {
+      display: flex !important;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 18px;
+      text-align: left;
+    }
+    .trust-bar > span {
+      width: min(100%, 360px) !important;
+      justify-content: flex-start !important;
+      gap: 10px;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: rgba(255,255,255,0.94);
+    }
+    .trust-bar > span .icon {
+      width: 24px !important;
+      min-width: 24px;
+      flex-basis: 24px;
+      font-size: 21px;
+      transform: translateY(1px);
+    }
+  }
+  @media (max-width: 360px) {
+    .trust-bar > span {
+      font-size: 13px;
+      gap: 8px;
+    }
+  }
 </style>
 </head>
 <body>
@@ -1173,7 +1227,7 @@
 </section>
 
 <!-- ===== TRUST BAR ===== -->
-<div class="trust-bar">
+<div class="trust-bar" aria-label="安心ポイント">
   <span><span class="icon">✅</span> 契約の押し付け一切なし</span>
   <span><span class="icon">✅</span> ご夫婦同席・後日共有OK</span>
   <span><span class="icon">✅</span> 無料・資料持ち帰りOK</span>
