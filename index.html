@@ -1203,6 +1203,60 @@
       gap: 8px;
     }
   }
+
+
+  /* ========== REQUESTED COPY FIXES ========== */
+  .hero-scheduled-note {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 12px 16px;
+    border-radius: 16px;
+    background: #fff7ed;
+    border: 2px solid rgba(245, 166, 35, 0.55);
+    color: #b45309;
+    font-weight: 900;
+    font-size: clamp(16px, 4.4vw, 22px);
+    line-height: 1.65;
+    box-shadow: 0 8px 20px rgba(245,166,35,0.16);
+  }
+  .trust-copy {
+    display: block;
+    font-weight: 800;
+    line-height: 1.55;
+  }
+  .cta-pre-note {
+    position: relative;
+    z-index: 1;
+    max-width: 760px;
+    margin: 0 auto 18px;
+    padding: 12px 16px;
+    border-radius: 16px;
+    background: rgba(245,166,35,0.14);
+    border: 1px solid rgba(245,166,35,0.45);
+    color: #fff;
+    font-size: clamp(15px, 4vw, 20px);
+    font-weight: 900;
+    line-height: 1.7;
+    text-align: center;
+  }
+  @media (max-width: 640px) {
+    .hero-scheduled-note {
+      width: min(100%, 360px);
+      font-size: 16px;
+      padding: 11px 13px;
+      margin-top: 16px;
+    }
+    .trust-copy {
+      font-size: 13.5px;
+      line-height: 1.65;
+    }
+    .cta-pre-note {
+      font-size: 15px;
+      margin-bottom: 16px;
+      padding: 11px 13px;
+    }
+  }
+
 </style>
 </head>
 <body>
@@ -1221,6 +1275,7 @@
       日時だけ仮予約する
       <small>契約ではありません／ご夫婦参加歓迎</small>
     </a>
+    <div class="hero-scheduled-note">【すでに日時を決められているお客様は、入力必要ありません。】</div>
     <br>
     <a href="#story" class="btn-sub">夫婦で意見が割れそうな方へ ↓</a>
   </div>
@@ -1228,9 +1283,9 @@
 
 <!-- ===== TRUST BAR ===== -->
 <div class="trust-bar" aria-label="安心ポイント">
-  <span><span class="icon">✅</span> 契約の押し付け一切なし</span>
-  <span><span class="icon">✅</span> ご夫婦同席・後日共有OK</span>
-  <span><span class="icon">✅</span> 無料・資料持ち帰りOK</span>
+  <span><span class="icon">✅</span><strong class="trust-copy">契約の押し付け一切なし</strong></span>
+  <span><span class="icon">✅</span><strong class="trust-copy">診断だけでもOK。<br>合う結果が出ても、見送っていただいて大丈夫</strong></span>
+  <span><span class="icon">✅</span><strong class="trust-copy">無料・資料持ち帰りOK</strong></span>
 </div>
 <!-- ===== MOBILE QUICK BRIDGE ===== -->
 <div class="mobile-bridge" aria-label="スマホ向け仮予約案内">
@@ -1384,12 +1439,8 @@
   <h2 class="section-title">夫婦で聞く前の<br>「気になること」に答えます</h2>
   <div class="faq-list">
     <div class="faq-item">
-      <div class="faq-q"><span class="q-mark">Q</span>夫婦そろって聞いたほうがいいですか？</div>
-      <div class="faq-a">できればご夫婦で聞いていただくのがおすすめです。片方だけが聞くと、あとで説明する負担が大きくなり、反対や不安が残りやすいためです。</div>
-    </div>
-    <div class="faq-item">
       <div class="faq-q"><span class="q-mark">Q</span>その場で決めないといけませんか？</div>
-      <div class="faq-a">いいえ。その場での契約を前提にした相談ではありません。ご家庭に合うかどうかを知り、夫婦で持ち帰って考えるための時間です。</div>
+      <div class="faq-a">いいえ。その場での契約を前提にした相談ではありません。まずはご家庭に合うかどうかを知って頂く時間です。</div>
     </div>
     <div class="faq-item">
       <div class="faq-q"><span class="q-mark">Q</span>希望日時を選ぶと、予約確定ですか？</div>
@@ -1405,10 +1456,11 @@
 <!-- ===== FINAL CTA / BOOKING FORM ===== -->
 <section class="cta-section" id="cta">
   <div class="section-label">KICKOFF｜最初の一歩</div>
+  <div class="cta-pre-note">【まだ日時を決められていないお客様は、下記へお進みください。】</div>
   <h2 class="section-title">まずは希望日時を<br>ひとつ押さえませんか。</h2>
   <p class="section-desc">
     予約は契約ではありません。<br>
-    まだ日程が決まっていない方だけ、下のフォームから希望日時をお選びください。
+    まだ日時が決まっていない方だけ、下のフォームから希望日時をお選びください。
   </p>
 
   <div class="already-scheduled-note">
