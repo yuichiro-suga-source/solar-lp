@@ -1327,7 +1327,7 @@
       送信先設定：Google Apps ScriptのWebアプリURLを、下部script内の GAS_WEB_APP_URL に入れてください。
       URL未設定のままでも画面表示と入力確認はできますが、スプレッドシート保存はされません。
     -->
-    <form id="hopeDateForm" method="POST" target="hidden_iframe">
+    <form id="hopeDateForm" method="POST" action="https://script.google.com/macros/s/AKfycbyJAFOBZ-5yxclFlI4yNeqDWXuvJAf1RNibw2HTeBA4awqJxvhko8jeJWXGYKLuE0Zx9g/exec" target="hidden_iframe">
       <input type="hidden" name="source" value="LP希望日時仮予約フォーム">
       <input type="hidden" name="preferred_date" id="preferredDate">
       <input type="hidden" name="preferred_time" id="preferredTime">
@@ -1335,6 +1335,10 @@
       <div class="booking-step">
         <div class="booking-step-title"><span class="booking-step-num">1</span>第1希望日を選択してください</div>
         <div class="booking-date-grid" id="dateGrid"></div>
+        <div class="booking-field booking-date-fallback" style="margin-top:12px;">
+          <label for="preferredDateManual">日付ボタンが表示されない場合はこちらから選択してください</label>
+          <input id="preferredDateManual" name="preferred_date_manual" type="date">
+        </div>
       </div>
 
       <div class="booking-step">
@@ -1450,6 +1454,7 @@
   const hopeDateForm = document.getElementById('hopeDateForm');
   const dateGrid = document.getElementById('dateGrid');
   const preferredDate = document.getElementById('preferredDate');
+  const preferredDateManual = document.getElementById('preferredDateManual');
   const preferredTime = document.getElementById('preferredTime');
   const bookingError = document.getElementById('bookingError');
   const bookingSubmit = document.getElementById('bookingSubmit');
@@ -1496,6 +1501,15 @@
       if (!btn) return;
       selectBookingButton('.booking-date-btn', btn);
       preferredDate.value = btn.dataset.date;
+      if (preferredDateManual) preferredDateManual.value = btn.dataset.date;
+      bookingError.style.display = 'none';
+    });
+  }
+
+  if (preferredDateManual) {
+    preferredDateManual.addEventListener('change', () => {
+      preferredDate.value = preferredDateManual.value;
+      document.querySelectorAll('.booking-date-btn').forEach(btn => btn.classList.remove('is-selected'));
       bookingError.style.display = 'none';
     });
   }
