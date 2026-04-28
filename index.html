@@ -1527,29 +1527,33 @@
 
   if (hopeDateForm) {
     hopeDateForm.action = GAS_WEB_APP_URL || '#';
-    hopeDateForm.addEventListener('submit', (e) => {
-      if (!preferredDate.value || !preferredTime.value) {
-        e.preventDefault();
-        bookingError.style.display = 'block';
-        return;
-      }
+   hopeDateForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
 
-      if (!GAS_WEB_APP_URL) {
-        e.preventDefault();
+      if (!preferredDate.value || !preferredTime.value) {
         bookingError.style.display = 'block';
-        bookingError.textContent = '送信先URLが未設定です。Google Apps ScriptのWebアプリURLを設定してください。';
         return;
       }
 
       bookingSubmit.disabled = true;
       bookingSubmit.textContent = '仮予約を送信中です...';
-      setTimeout(() => {
-        bookingComplete.style.display = 'block';
-        bookingSubmit.textContent = '仮予約を送信しました';
-      }, 900);
+
+      const formData = new FormData(hopeDateForm);
+      const params = new URLSearchParams(formData);
+
+      try {
+        await fetch(GAS_WEB_APP_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: params.toString()
+        });
+      } catch (err) {}
+
+      bookingComplete.style.display = 'block';
+      bookingSubmit.textContent = '仮予約を送信しました';
     });
   }
-
 
   // Smooth scroll for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(a => {
