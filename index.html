@@ -1099,6 +1099,56 @@
     .hero-sub br, .section-desc br { display: initial; }
   }
 
+
+  /* ========== GOOGLE FORM EMBED ========== */
+  .google-form-card { overflow: hidden; }
+  .google-form-notice {
+    margin: 0 18px 14px;
+    padding: 13px 14px;
+    border-radius: 14px;
+    background: #fff7ed;
+    border: 1px solid rgba(245, 166, 35, 0.35);
+    color: #7c2d12;
+    font-size: 13px;
+    line-height: 1.75;
+    text-align: left;
+  }
+  .google-form-notice strong {
+    display: block;
+    margin-bottom: 3px;
+    color: var(--accent);
+    font-size: 14px;
+  }
+  .google-form-frame-wrap {
+    width: 100%;
+    padding: 0 8px 12px;
+    background: #fff;
+  }
+  .google-form-frame {
+    display: block;
+    width: 100%;
+    min-height: 1420px;
+    border: 0;
+    border-radius: 12px;
+    background: #fff;
+  }
+  .google-form-fallback {
+    margin: 0 18px 20px;
+    font-size: 13px;
+    line-height: 1.8;
+    color: var(--muted);
+    text-align: center;
+  }
+  .google-form-fallback a {
+    color: var(--sky);
+    font-weight: 700;
+  }
+  @media (max-width: 640px) {
+    .google-form-frame-wrap { padding: 0 0 10px; }
+    .google-form-frame { min-height: 1560px; border-radius: 0; }
+    .google-form-notice { margin: 0 14px 12px; font-size: 12.5px; }
+  }
+
 </style>
 </head>
 <body>
@@ -1316,100 +1366,32 @@
     このフォームの入力は不要です。ご案内済みの日時でそのままお待ちください。日程変更や追加のご相談がある場合のみ、担当者へご連絡ください。
   </div>
 
-  <div class="booking-card" id="bookingFormArea">
+<div class="booking-card google-form-card" id="bookingFormArea">
     <div class="booking-card-header">
       <span class="booking-badge">最短30秒｜希望日時の仮予約</span>
       <h3>無料相談の希望日時を<br>仮予約してください</h3>
       <p>まだ日程が決まっていない方はこちらからお選びください。すでに日程が決まっている方は入力不要です。</p>
     </div>
 
-    <!--
-      送信先設定：Google Apps ScriptのWebアプリURLを、下部script内の GAS_WEB_APP_URL に入れてください。
-      URL未設定のままでも画面表示と入力確認はできますが、スプレッドシート保存はされません。
-    -->
-    <form id="hopeDateForm" method="POST" action="https://script.google.com/macros/s/AKfycbyJAFOBZ-5yxclFlI4yNeqDWXuvJAf1RNibw2HTeBA4awqJxvhko8jeJWXGYKLuE0Zx9g/exec" target="hidden_iframe">
-      <input type="hidden" name="source" value="LP希望日時仮予約フォーム">
-      <input type="hidden" name="preferred_date" id="preferredDate">
-      <input type="hidden" name="preferred_time" id="preferredTime">
+    <div class="google-form-notice">
+      <strong>入力前の確認</strong>
+      このフォーム送信は契約ではありません。担当者が内容を確認し、正式な日時を調整いたします。
+    </div>
 
-      <div class="booking-step">
-        <div class="booking-step-title"><span class="booking-step-num">1</span>第1希望日を選択してください</div>
-        <div class="booking-date-grid" id="dateGrid"></div>
-        <div class="booking-field booking-date-fallback" style="margin-top:12px;">
-          <label for="preferredDateManual">日付ボタンが表示されない場合はこちらから選択してください</label>
-          <input id="preferredDateManual" name="preferred_date_manual" type="date">
-        </div>
-      </div>
+    <div class="google-form-frame-wrap">
+      <iframe
+        class="google-form-frame"
+        src="https://docs.google.com/forms/d/e/1FAIpQLSdDZidxYRJsvz-OU8CFZYJSHYqnrXVRhCL3DNxC9730lzKZdg/viewform?embedded=true"
+        title="無料相談の希望日時 仮予約フォーム"
+        loading="lazy"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0">読み込んでいます…</iframe>
+    </div>
 
-      <div class="booking-step">
-        <div class="booking-step-title"><span class="booking-step-num">2</span>第1希望の時間帯を選択してください</div>
-        <div class="booking-time-grid" id="timeGrid">
-          <button type="button" class="booking-time-btn" data-time="午前">午前</button>
-          <button type="button" class="booking-time-btn" data-time="昼頃">昼頃</button>
-          <button type="button" class="booking-time-btn" data-time="午後">午後</button>
-          <button type="button" class="booking-time-btn" data-time="夕方">夕方</button>
-        </div>
-      </div>
-
-      <div class="booking-step">
-        <div class="booking-step-title"><span class="booking-step-num">3</span>第2希望があれば入力してください <small style="font-weight:500;color:#777;">任意</small></div>
-        <div class="booking-field-grid">
-          <div class="booking-field">
-            <label for="secondPreferredDate">第2希望日 任意</label>
-            <input id="secondPreferredDate" name="second_preferred_date" type="date">
-          </div>
-          <div class="booking-field">
-            <label for="secondPreferredTime">第2希望時間 任意</label>
-            <select id="secondPreferredTime" name="second_preferred_time">
-              <option value="">選択してください</option>
-              <option value="午前">午前</option>
-              <option value="昼頃">昼頃</option>
-              <option value="午後">午後</option>
-              <option value="夕方">夕方</option>
-            </select>
-          </div>
-        </div>
-      </div>
-
-      <div class="booking-step">
-        <div class="booking-step-title"><span class="booking-step-num">4</span>ご連絡先・ご家庭の状況を入力してください</div>
-        <div class="booking-field-grid">
-          <div class="booking-field">
-            <label for="customerName">お名前 *</label>
-            <input id="customerName" name="name" type="text" autocomplete="name" required placeholder="例：山田 太郎">
-          </div>
-          <div class="booking-field">
-            <label for="customerTel">電話番号 *</label>
-            <input id="customerTel" name="phone" type="tel" autocomplete="tel" required placeholder="例：09012345678">
-          </div>
-          <div class="booking-field full">
-            <label for="attendanceType">当日お話を聞かれる方 *</label>
-            <select id="attendanceType" name="attendance" required>
-              <option value="">選択してください</option>
-              <option value="ご夫婦で聞きたい">ご夫婦で聞きたい</option>
-              <option value="奥様が先に聞きたい">奥様が先に聞きたい</option>
-              <option value="ご主人様が先に聞きたい">ご主人様が先に聞きたい</option>
-              <option value="まだ未定">まだ未定</option>
-            </select>
-          </div>
-          <div class="booking-field full">
-            <label for="customerContact">メールまたはLINE名 任意</label>
-            <input id="customerContact" name="contact_extra" type="text" placeholder="メール・LINE名など">
-          </div>
-          <div class="booking-field full">
-            <label for="customerMemo">ご相談内容 任意</label>
-            <textarea id="customerMemo" name="memo" rows="3" placeholder="例：妻にも聞いてほしい／夫が費用面を気にしている／電気代が高い／停電対策を知りたい など"></textarea>
-          </div>
-        </div>
-      </div>
-
-      <div class="booking-assurance">※この送信は「相談日時の仮予約」です。契約ではありません。すでに日程が決まっている方は入力不要です。担当者が確認のご連絡を差し上げ、ご夫婦のご都合に合わせて正式に日程を確定します。</div>
-      <p class="booking-error" id="bookingError">第1希望日と時間帯を選択してください。</p>
-      <button type="submit" class="booking-submit" id="bookingSubmit">無料相談の日時を仮予約する</button>
-      <p class="booking-privacy">送信いただいた内容は、日程調整・ご相談対応・資料準備の目的で使用します。</p>
-      <div class="booking-complete" id="bookingComplete">仮予約ありがとうございます。担当者より確認のご連絡を差し上げ、正式な日時を調整いたします。</div>
-    </form>
-    <iframe name="hidden_iframe" style="display:none;"></iframe>
+    <p class="google-form-fallback">
+      フォームが表示されない場合は、<a href="https://docs.google.com/forms/d/e/1FAIpQLSdDZidxYRJsvz-OU8CFZYJSHYqnrXVRhCL3DNxC9730lzKZdg/viewform?usp=dialog" target="_blank" rel="noopener">こちらから別画面で入力してください</a>。
+    </p>
   </div>
 
   <p class="cta-note">
@@ -1444,116 +1426,7 @@
 
 
 
-  // LP希望日フォーム：日付ボタン生成・選択・送信制御
-  const GAS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyJAFOBZ-5yxclFlI4yNeqDWXuvJAf1RNibw2HTeBA4awqJxvhko8jeJWXGYKLuE0Zx9g/exec"; // Google Apps ScriptのWebアプリURL
-  const daysToShow = 14;
-  const disabledDates = [
-    // 受付不可日がある場合は "2026-05-03", "2026-05-04" のように追加
-  ];
-  const weekdays = ["日", "月", "火", "水", "木", "金", "土"];
-  const hopeDateForm = document.getElementById('hopeDateForm');
-  const dateGrid = document.getElementById('dateGrid');
-  const preferredDate = document.getElementById('preferredDate');
-  const preferredDateManual = document.getElementById('preferredDateManual');
-  const preferredTime = document.getElementById('preferredTime');
-  const bookingError = document.getElementById('bookingError');
-  const bookingSubmit = document.getElementById('bookingSubmit');
-  const bookingComplete = document.getElementById('bookingComplete');
-
-  function toYmd(date) {
-    const y = date.getFullYear();
-    const m = String(date.getMonth() + 1).padStart(2, '0');
-    const d = String(date.getDate()).padStart(2, '0');
-    return `${y}-${m}-${d}`;
-  }
-
-  function renderBookingDates() {
-    if (!dateGrid) return;
-    const today = new Date();
-    for (let i = 1; i <= daysToShow; i++) {
-      const date = new Date(today);
-      date.setDate(today.getDate() + i);
-      const ymd = toYmd(date);
-      if (disabledDates.includes(ymd)) continue;
-
-      const btn = document.createElement('button');
-      btn.type = 'button';
-      btn.className = 'booking-date-btn';
-      btn.dataset.date = ymd;
-      const md = `${date.getMonth() + 1}/${date.getDate()}`;
-      const wd = weekdays[date.getDay()];
-      const label = i <= 3 ? '早め' : (date.getDay() === 0 || date.getDay() === 6 ? '週末' : '');
-      btn.innerHTML = `<span class="date-main">${md}</span><span class="date-sub">${wd}曜日</span>${label ? `<span class="date-label">${label}</span>` : ''}`;
-      dateGrid.appendChild(btn);
-    }
-  }
-
-  function selectBookingButton(selector, selectedButton) {
-    document.querySelectorAll(selector).forEach(btn => btn.classList.remove('is-selected'));
-    selectedButton.classList.add('is-selected');
-  }
-
-  renderBookingDates();
-
-  if (dateGrid) {
-    dateGrid.addEventListener('click', (e) => {
-      const btn = e.target.closest('.booking-date-btn');
-      if (!btn) return;
-      selectBookingButton('.booking-date-btn', btn);
-      preferredDate.value = btn.dataset.date;
-      if (preferredDateManual) preferredDateManual.value = btn.dataset.date;
-      bookingError.style.display = 'none';
-    });
-  }
-
-  if (preferredDateManual) {
-    preferredDateManual.addEventListener('change', () => {
-      preferredDate.value = preferredDateManual.value;
-      document.querySelectorAll('.booking-date-btn').forEach(btn => btn.classList.remove('is-selected'));
-      bookingError.style.display = 'none';
-    });
-  }
-
-  const timeGrid = document.getElementById('timeGrid');
-  if (timeGrid) {
-    timeGrid.addEventListener('click', (e) => {
-      const btn = e.target.closest('.booking-time-btn');
-      if (!btn) return;
-      selectBookingButton('.booking-time-btn', btn);
-      preferredTime.value = btn.dataset.time;
-      bookingError.style.display = 'none';
-    });
-  }
-
-  if (hopeDateForm) {
-    hopeDateForm.action = GAS_WEB_APP_URL || '#';
-   hopeDateForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-
-      if (!preferredDate.value || !preferredTime.value) {
-        bookingError.style.display = 'block';
-        return;
-      }
-
-      bookingSubmit.disabled = true;
-      bookingSubmit.textContent = '仮予約を送信中です...';
-
-      const formData = new FormData(hopeDateForm);
-      const params = new URLSearchParams(formData);
-
-      try {
-        await fetch(GAS_WEB_APP_URL, {
-          method: 'POST',
-          mode: 'no-cors',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: params.toString()
-        });
-      } catch (err) {}
-
-      bookingComplete.style.display = 'block';
-      bookingSubmit.textContent = '仮予約を送信しました';
-    });
-  }
+  // Googleフォーム埋め込み方式に切り替え済み：送信・保存はGoogleフォーム側で処理します。
 
   // Smooth scroll for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(a => {
